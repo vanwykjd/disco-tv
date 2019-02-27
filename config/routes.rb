@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: "pages#root"
+  get 'popular', action: :popular, controller: 'pages'
+  get 'search', action: :search, controller: 'pages'
+  get 'tv_show/:id', action: :tv_show, controller: 'pages'
+
 end

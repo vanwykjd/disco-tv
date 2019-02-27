@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+html {
+  min-height: 100%;
+  width: auto;
+  margin: 0;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+}
