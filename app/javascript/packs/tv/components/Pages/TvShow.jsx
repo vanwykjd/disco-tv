@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
-import { Row, Col, List, Card, Progress } from 'antd';
-// Components
+import { Row, Col, List, Card, Progress, Icon } from 'antd';
+
+import { Link } from 'react-router-dom'
+import * as ROUTES from '../../constants/routes';
+
 
 class TvShow extends React.Component {
   
@@ -50,6 +53,7 @@ class TvShow extends React.Component {
     
     return(
       <div className='content'>
+        <Link to={ROUTES.PAGES}><h2 style={{color: 'rgba(0, 0, 0, .45)' }}><Icon type="left" style={{ fontSize: '16px', paddingRight: '2px', paddingBottom: '2px'}}/>Back</h2></Link>
         { show && 
           <div>
             <img className='tv-poster' alt={show.name} src={show.backdrop_image} style={{width: '100%', height: 'auto'}} />
