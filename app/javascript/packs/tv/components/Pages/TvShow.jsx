@@ -33,6 +33,7 @@ class TvShow extends React.Component {
     
     this.fetch(`/tv_show/${this.props.match.params.id}`)
     .then(show => {
+      console.log(Object.keys(show));
       this.setState({ show: show, loading: false });
     })
   }
