@@ -10,7 +10,14 @@ class Tv
   def popular
     data = []
     @popular.map { |show|
-      data.push(detail(show.id))
+      struct_show = {
+        id: show.id,
+        name: show.name,
+        overview: show.overview,
+        vote_average: show.vote_average,
+        poster_image: "#{@config.base_url}original#{show.poster_path}",
+      }
+      data.push(struct_show)
     }
     data.reverse
   end
@@ -52,7 +59,7 @@ class Tv
       vote_count: show["vote_count"],
       credits: show["credits"],
       external_ids: show["external_ids"],
-      image: "#{@config.base_url}w200/#{show["poster_path"]}",
+      backdrop_image: "#{@config.base_url}original#{show["backdrop_path"]}",
     }
   end
 end

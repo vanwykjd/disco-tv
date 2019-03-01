@@ -1,14 +1,22 @@
 import React from 'react';
-import {Row} from 'antd';
+import { Row, Col } from 'antd';
 
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import SearchBar from './SearchBar';
 
-const Nav = () => (
+const HomeLink = () => (
+  <Link className='nav-link' to={ROUTES.PAGES}>Disco TV</Link>
+)
 
-    <Row type="flex" justify="space-around" align="middle">
-      <SearchBar />
+const Nav = () => (
+    <Row type="flex" align="middle" className='nav'>
+      <Col span={6} className='nav-item' > 
+        <HomeLink />
+      </Col>
+      <Col span={12}>
+        <SearchBar />
+      </Col>
     </Row>
  
 );

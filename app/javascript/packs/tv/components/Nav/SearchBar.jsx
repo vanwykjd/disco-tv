@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Select, Spin, Form } from 'antd';
+import { Select, Spin } from 'antd';
 import debounce from 'lodash/debounce';
-import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+import { withRouter, Route, Link} from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
 const Option = Select.Option;
@@ -13,6 +12,7 @@ class SearchBar extends React.Component {
     
     this.lastFetchId = 0;
     this.fetchShow = debounce(this.fetchShow, 800);
+    this.selectShow = this.selectShow.bind(this)
   }
 
   state = {
@@ -42,23 +42,22 @@ class SearchBar extends React.Component {
         this.setState({ data, fetching: false });
       });
   }
-  
-  selectShow(show) {
-    if (show) {
-      this.props.history.push(`/tv_shows/${show}`)
-    }
-  }
 
   handleChange = (search) => {
     this.setState({
-      search,
       data: [],
+      search: null,
       fetching: false,
     });
   }
   
+  selectShow = (search) => {
+    this.props.history.push(`${ROUTES.TV_SHOWS}/${search}`);
+  }
+  
   render() {
-    const { fetching, data, search } = this.state;
+    const { fetching, data } = this.state;
+    const search = (this.state.search) ? this.state.search.value : undefined
     
     return (
       <Select
@@ -72,10 +71,12 @@ class SearchBar extends React.Component {
         onChange={this.handleChange}
         onSelect={this.selectShow}
         onEnter={this.selectShow}
-        style={{ width: '350px' }}
+        style={{ width: '100%'}}
       >
         {data.map( show =>
-          <Option key={show.key}>{show.value}</Option>
+          <Option key={show.key}>
+            {show.value}
+          </Option>
         )}
       </Select>
     );

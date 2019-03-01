@@ -1,32 +1,83 @@
-@import 'antd/dist/antd.css'; 
+@import 'antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+
 .header {
-    position: fixed;
-    top: 0;
-    padding-top: 15px;
-    height: 68px;
-    width: 100%;
-    display: flex;
-    background: #222;
-    display: block;
-    z-index: 999;
+  position: fixed;
+  height: 72px;
+  width: 100%;
+  display: flex;
+  background: #222;
+  padding-left: 34px;
+  padding-right: 34px;
+  display: block;
+  z-index: 999;
+}
+
+.main-content {
+  height: 100vh;
 }
 
 .content-container {
-  width: 100%;
-  height: auto;
-  padding-top:68px;
-  padding-left: 34px;
-  padding-right: 34px;
+  position: relative;
+  height: inherit;
 }
 
-.content {
+.content{
+  position: absolute;
   max-width: 900px;
+  top: 72px;
+  left: 0; 
+  right: 0;
+  bottom: 30px;
+  margin-left: auto; 
+  margin-right: auto; 
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.nav {
+  max-width: 900px;
+  height: 72px;
   margin:0 auto;
 }
 
+.nav-item {
+  width: 100%%;
+}
+
+.nav-link {
+  width: 100%;
+  color: #f1f1f1;
+  font-size: 30px;
+  font-weight: 100;
+  font-family: 'Monoton', cursive;
+  text-decoration: none;
+  float: left;
+  text-decoration: none !important;
+}
+
+.show-title {
+  margin-top: 30px;
+  font-size: 30px;
+}
+
 .slick-next:before, .slick-prev:before {
-  font-size: 20px;
-  line-height: 1;
-  opacity: .75;
-  color: #000 !important;
+  display: none !important;
+}
+
+.tv-poster {
+  margin-top: 30px;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.tv-detail {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 750px) {
+  .nav-link {
+    font-size: 24px;
+  }
 }
