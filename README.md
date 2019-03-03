@@ -2,6 +2,8 @@
 
 Disco-Tv is a Single-Page-Application that utilizes the TMDB-API, enabling for search and discovery of TV shows
 
+##### Checkout the deployed version on [Heroku](https://vast-anchorage-50668.herokuapp.com/)
+
 ## Features
  - Access a list popular TV shows that is updated on a daily basis
  - Get detailed information for specific a TV show
