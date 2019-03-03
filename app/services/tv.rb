@@ -15,7 +15,7 @@ class Tv
         name: show.name,
         overview: show.overview,
         vote_average: show.vote_average,
-        poster_image: "#{@config.base_url}original#{show.poster_path}",
+        poster_image: "#{@config.secure_base_url}w300#{show.poster_path}",
       }
       data.push(struct_show)
     }
@@ -59,7 +59,7 @@ class Tv
       vote_count: show["vote_count"],
       credits: show["credits"],
       external_ids: show["external_ids"],
-      backdrop_image: "#{@config.base_url}original#{show["backdrop_path"]}",
+      backdrop_image: "#{@config.secure_base_url}w1280#{show["backdrop_path"]}",
     }
   end
 end
