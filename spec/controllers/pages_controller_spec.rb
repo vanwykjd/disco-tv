@@ -46,7 +46,7 @@ RSpec.describe PagesController, type: :controller do
   end
   
   
-  describe "GET #popular" do
+  describe "GET #search" do
     before do
       get :root
     end
@@ -82,7 +82,7 @@ RSpec.describe PagesController, type: :controller do
   end
   
   
-  describe "GET #popular" do
+  describe "GET #tv_show" do
     before do
       get :root
     end
